@@ -1,0 +1,22 @@
+PODS:
+  - Alamofire (4.3.0)
+  - ObjectMapper (2.2.4)
+  - RxCocoa (3.2.0):
+    - RxSwift (~> 3.1)
+  - RxSwift (3.2.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - ObjectMapper
+  - RxCocoa
+  - RxSwift
+
+SPEC CHECKSUMS:
+  Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
+  ObjectMapper: 81d0e5d7c57129e3e93f29a04bdf9669542b37d2
+  RxCocoa: ccdf43101a70407097a29082f648ba1676075b30
+  RxSwift: 46574f70d416b7923c237195939cc488a7fbf3a0
+
+PODFILE CHECKSUM: 07b0f0c2dc54cf622ef8d99d5039d8e13adda352
+
+COCOAPODS: 1.1.1
