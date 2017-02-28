@@ -13,6 +13,8 @@
 		E13ABC5D1E65264600D67CCA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E13ABC5B1E65264600D67CCA /* Main.storyboard */; };
 		E13ABC5F1E65264600D67CCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E13ABC5E1E65264600D67CCA /* Assets.xcassets */; };
 		E13ABC621E65264600D67CCA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E13ABC601E65264600D67CCA /* LaunchScreen.storyboard */; };
+		E13ABC701E65278B00D67CCA /* NetEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13ABC6E1E65278B00D67CCA /* NetEngine.swift */; };
+		E13ABC711E65278B00D67CCA /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13ABC6F1E65278B00D67CCA /* Observable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		E13ABC5E1E65264600D67CCA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E13ABC611E65264600D67CCA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E13ABC631E65264600D67CCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E13ABC6E1E65278B00D67CCA /* NetEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetEngine.swift; path = NetEngine/NetEngine.swift; sourceTree = "<group>"; };
+		E13ABC6F1E65278B00D67CCA /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Observable.swift; path = NetEngine/Observable.swift; sourceTree = "<group>"; };
 		EDDC1C824EFC98A9152754B4 /* Pods-RxTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxTest/Pods-RxTest.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,6 +82,7 @@
 		E13ABC561E65264600D67CCA /* RxTest */ = {
 			isa = PBXGroup;
 			children = (
+				E13ABC691E65273300D67CCA /* 网络 */,
 				E13ABC571E65264600D67CCA /* AppDelegate.swift */,
 				E13ABC591E65264600D67CCA /* ViewController.swift */,
 				E13ABC5B1E65264600D67CCA /* Main.storyboard */,
@@ -86,6 +91,15 @@
 				E13ABC631E65264600D67CCA /* Info.plist */,
 			);
 			path = RxTest;
+			sourceTree = "<group>";
+		};
+		E13ABC691E65273300D67CCA /* 网络 */ = {
+			isa = PBXGroup;
+			children = (
+				E13ABC6E1E65278B00D67CCA /* NetEngine.swift */,
+				E13ABC6F1E65278B00D67CCA /* Observable.swift */,
+			);
+			name = "网络";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +226,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E13ABC711E65278B00D67CCA /* Observable.swift in Sources */,
+				E13ABC701E65278B00D67CCA /* NetEngine.swift in Sources */,
 				E13ABC5A1E65264600D67CCA /* ViewController.swift in Sources */,
 				E13ABC581E65264600D67CCA /* AppDelegate.swift in Sources */,
 			);
@@ -377,6 +393,7 @@
 				E13ABC681E65264600D67CCA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
