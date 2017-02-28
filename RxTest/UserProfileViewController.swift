@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  UserProfileViewController.swift
 //  RxTest
 //
 //  Created by xiaoP on 2017/2/28.
@@ -8,13 +8,14 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class UserProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
     }
 
+    
 
 }
-
