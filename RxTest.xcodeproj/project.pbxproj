@@ -16,6 +16,10 @@
 		E13ABC711E65278B00D67CCA /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13ABC6F1E65278B00D67CCA /* Observable.swift */; };
 		E13ABC751E65427B00D67CCA /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13ABC741E65427B00D67CCA /* UserProfileViewController.swift */; };
 		E13ABC771E6542F100D67CCA /* UserProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13ABC761E6542F100D67CCA /* UserProfileViewModel.swift */; };
+		E1728EF71E65CF5400804A01 /* BriefDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1728EF61E65CF5400804A01 /* BriefDescriptionCell.swift */; };
+		E1728EF91E65D40B00804A01 /* BackgroundCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1728EF81E65D40B00804A01 /* BackgroundCell.swift */; };
+		E1728EFB1E65D42000804A01 /* RequireCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1728EFA1E65D42000804A01 /* RequireCell.swift */; };
+		E1728EFE1E65D65500804A01 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1728EFD1E65D65500804A01 /* BaseTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +35,10 @@
 		E13ABC6F1E65278B00D67CCA /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Observable.swift; path = NetEngine/Observable.swift; sourceTree = "<group>"; };
 		E13ABC741E65427B00D67CCA /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		E13ABC761E6542F100D67CCA /* UserProfileViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewModel.swift; sourceTree = "<group>"; };
+		E1728EF61E65CF5400804A01 /* BriefDescriptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BriefDescriptionCell.swift; sourceTree = "<group>"; };
+		E1728EF81E65D40B00804A01 /* BackgroundCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundCell.swift; sourceTree = "<group>"; };
+		E1728EFA1E65D42000804A01 /* RequireCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequireCell.swift; sourceTree = "<group>"; };
+		E1728EFD1E65D65500804A01 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		EDDC1C824EFC98A9152754B4 /* Pods-RxTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxTest/Pods-RxTest.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,6 +92,7 @@
 		E13ABC561E65264600D67CCA /* RxTest */ = {
 			isa = PBXGroup;
 			children = (
+				E1728EFC1E65D63800804A01 /* Base Class */,
 				E13ABC691E65273300D67CCA /* NetEngine */,
 				E13ABC721E65423700D67CCA /* UserPofile */,
 				E13ABC731E65424C00D67CCA /* Support */,
@@ -105,6 +114,9 @@
 			children = (
 				E13ABC741E65427B00D67CCA /* UserProfileViewController.swift */,
 				E13ABC761E6542F100D67CCA /* UserProfileViewModel.swift */,
+				E1728EF61E65CF5400804A01 /* BriefDescriptionCell.swift */,
+				E1728EF81E65D40B00804A01 /* BackgroundCell.swift */,
+				E1728EFA1E65D42000804A01 /* RequireCell.swift */,
 			);
 			name = UserPofile;
 			sourceTree = "<group>";
@@ -119,6 +131,14 @@
 				E13ABC631E65264600D67CCA /* Info.plist */,
 			);
 			name = Support;
+			sourceTree = "<group>";
+		};
+		E1728EFC1E65D63800804A01 /* Base Class */ = {
+			isa = PBXGroup;
+			children = (
+				E1728EFD1E65D65500804A01 /* BaseTableViewCell.swift */,
+			);
+			name = "Base Class";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,7 +266,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E13ABC711E65278B00D67CCA /* Observable.swift in Sources */,
+				E1728EFB1E65D42000804A01 /* RequireCell.swift in Sources */,
+				E1728EF71E65CF5400804A01 /* BriefDescriptionCell.swift in Sources */,
 				E13ABC751E65427B00D67CCA /* UserProfileViewController.swift in Sources */,
+				E1728EFE1E65D65500804A01 /* BaseTableViewCell.swift in Sources */,
+				E1728EF91E65D40B00804A01 /* BackgroundCell.swift in Sources */,
 				E13ABC771E6542F100D67CCA /* UserProfileViewModel.swift in Sources */,
 				E13ABC701E65278B00D67CCA /* NetEngine.swift in Sources */,
 				E13ABC581E65264600D67CCA /* AppDelegate.swift in Sources */,
