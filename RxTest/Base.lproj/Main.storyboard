@@ -41,10 +41,10 @@
             </objects>
             <point key="canvasLocation" x="1009" y="-576"/>
         </scene>
-        <!--View Controller-->
+        <!--User Profile View Controller-->
         <scene sceneID="H0W-p7-VDV">
             <objects>
-                <viewController id="RU7-8c-1DP" sceneMemberID="viewController">
+                <viewController id="RU7-8c-1DP" customClass="UserProfileViewController" customModule="RxTest" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Oze-SN-piC"/>
                         <viewControllerLayoutGuide type="bottom" id="RHw-OC-iV3"/>
@@ -76,6 +76,9 @@
                             <constraint firstItem="LcV-Bs-9Co" firstAttribute="leading" secondItem="bxf-Ic-xw7" secondAttribute="leading" id="eTS-fz-Ojc"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="LcV-Bs-9Co" id="3sK-Xh-0fN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kBg-Ln-8tC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
