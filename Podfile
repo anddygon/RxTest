@@ -10,5 +10,6 @@ target 'RxTest' do
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'ObjectMapper'
+  pod 'RxDataSources'  
 
 end
