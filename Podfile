@@ -11,5 +11,5 @@ target 'RxTest' do
   pod 'RxCocoa'
   pod 'ObjectMapper'
   pod 'RxDataSources'  
-
+  pod 'TextAttributes'
 end

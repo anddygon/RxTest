@@ -10,5 +10,12 @@ import UIKit
 
 class RequireCell: BaseTableViewCell {
     
+    @IBOutlet weak var icon: UIImageView!
+    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var require: UILabel!
+    @IBOutlet weak var reward: UILabel!
+    @IBOutlet weak var time: UILabel!
+    
+    
 }
 

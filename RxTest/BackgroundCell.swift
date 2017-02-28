@@ -10,5 +10,9 @@ import UIKit
 
 class BackgroundCell: BaseTableViewCell {
     
+    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var content: UILabel!
+    
+    
 }
 

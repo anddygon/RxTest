@@ -54,15 +54,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="88" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="LcV-Bs-9Co">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="88" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="LcV-Bs-9Co">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="436"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <inset key="separatorInset" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BriefDescriptionCell" rowHeight="88" id="OEu-4f-MzQ" customClass="BriefDescriptionCell" customModule="RxTest" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="BriefDescriptionCell" rowHeight="88" id="OEu-4f-MzQ" customClass="BriefDescriptionCell" customModule="RxTest" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="56" width="320" height="88"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OEu-4f-MzQ" id="vCD-yb-O49">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="88"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="87"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="A" translatesAutoresizingMaskIntoConstraints="NO" id="PUS-aL-rEn">
@@ -118,12 +119,20 @@
                                                 <constraint firstItem="PUS-aL-rEn" firstAttribute="leading" secondItem="vCD-yb-O49" secondAttribute="leading" constant="10" id="zsT-aY-WNb"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="avatar" destination="PUS-aL-rEn" id="icZ-rn-WGO"/>
+                                            <outlet property="connections" destination="kl0-aN-DD3" id="Ubh-G9-LrF"/>
+                                            <outlet property="favorited" destination="EVX-Tz-JLC" id="pTh-zw-bpU"/>
+                                            <outlet property="name" destination="dPE-w2-NWf" id="7xx-JD-Cqa"/>
+                                            <outlet property="platform" destination="v7D-dh-qec" id="Yye-F3-Mvc"/>
+                                            <outlet property="viewed" destination="BNY-ok-RqS" id="yEL-Hk-iBS"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BackgroundCell" rowHeight="44" id="uls-Az-ywP" customClass="BackgroundCell" customModule="RxTest" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="144" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uls-Az-ywP" id="en2-2B-Myv">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="行业" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z1f-ia-cy2">
@@ -146,12 +155,16 @@
                                                 <constraint firstItem="Sa4-5d-NUR" firstAttribute="leading" secondItem="en2-2B-Myv" secondAttribute="leadingMargin" constant="70" id="kng-5g-YUY"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="content" destination="Sa4-5d-NUR" id="2VU-hg-N5V"/>
+                                            <outlet property="title" destination="z1f-ia-cy2" id="obz-lp-df3"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RequireCell" rowHeight="74" id="fI0-J0-6sR" customClass="RequireCell" customModule="RxTest" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="188" width="320" height="74"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fI0-J0-6sR" id="eGp-fM-Cjx">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="74"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="73"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="requires_1" translatesAutoresizingMaskIntoConstraints="NO" id="6er-bI-keJ">
@@ -195,6 +208,13 @@
                                                 <constraint firstItem="6er-bI-keJ" firstAttribute="centerY" secondItem="eGp-fM-Cjx" secondAttribute="centerY" id="kgx-r7-YbQ"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="icon" destination="6er-bI-keJ" id="zhy-R8-FS8"/>
+                                            <outlet property="require" destination="SvA-El-aVQ" id="ivb-Rp-axr"/>
+                                            <outlet property="reward" destination="SKN-fs-u8Z" id="sCg-PC-IJU"/>
+                                            <outlet property="time" destination="dbs-pZ-HPX" id="vde-Um-gCm"/>
+                                            <outlet property="title" destination="ss7-b7-Dry" id="tlD-Ef-Lr5"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

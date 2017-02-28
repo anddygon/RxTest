@@ -7,6 +7,7 @@ PODS:
     - RxCocoa (~> 3.0)
     - RxSwift (~> 3.0)
   - RxSwift (3.2.0)
+  - TextAttributes (1.0)
 
 DEPENDENCIES:
   - Alamofire
@@ -14,6 +15,7 @@ DEPENDENCIES:
   - RxCocoa
   - RxDataSources
   - RxSwift
+  - TextAttributes
 
 SPEC CHECKSUMS:
   Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
@@ -21,7 +23,8 @@ SPEC CHECKSUMS:
   RxCocoa: ccdf43101a70407097a29082f648ba1676075b30
   RxDataSources: a021a0e944ba5f7991259829d973afdbfa719c0b
   RxSwift: 46574f70d416b7923c237195939cc488a7fbf3a0
+  TextAttributes: 45b2713a1d174c377d320b51129c304eac381638
 
-PODFILE CHECKSUM: 4835aa8fd4c505708e499efaaa72726c9f299a81
+PODFILE CHECKSUM: 87c6dd0c1a2b8cf229ad689b80b78906e090cfd4
 
 COCOAPODS: 1.1.1
