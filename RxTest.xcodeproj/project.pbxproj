@@ -16,6 +16,7 @@
 		E13ABC711E65278B00D67CCA /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13ABC6F1E65278B00D67CCA /* Observable.swift */; };
 		E13ABC751E65427B00D67CCA /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13ABC741E65427B00D67CCA /* UserProfileViewController.swift */; };
 		E13ABC771E6542F100D67CCA /* UserProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13ABC761E6542F100D67CCA /* UserProfileViewModel.swift */; };
+		E1728EDF1E65883900804A01 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1728EDE1E65883900804A01 /* Cell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		E13ABC6F1E65278B00D67CCA /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Observable.swift; path = NetEngine/Observable.swift; sourceTree = "<group>"; };
 		E13ABC741E65427B00D67CCA /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		E13ABC761E6542F100D67CCA /* UserProfileViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewModel.swift; sourceTree = "<group>"; };
+		E1728EDE1E65883900804A01 /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		EDDC1C824EFC98A9152754B4 /* Pods-RxTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxTest/Pods-RxTest.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,6 +107,7 @@
 			children = (
 				E13ABC741E65427B00D67CCA /* UserProfileViewController.swift */,
 				E13ABC761E6542F100D67CCA /* UserProfileViewModel.swift */,
+				E1728EDE1E65883900804A01 /* Cell.swift */,
 			);
 			name = UserPofile;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				E13ABC771E6542F100D67CCA /* UserProfileViewModel.swift in Sources */,
 				E13ABC701E65278B00D67CCA /* NetEngine.swift in Sources */,
 				E13ABC581E65264600D67CCA /* AppDelegate.swift in Sources */,
+				E1728EDF1E65883900804A01 /* Cell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
