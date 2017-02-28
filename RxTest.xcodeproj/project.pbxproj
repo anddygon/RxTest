@@ -17,6 +17,16 @@
 		E13ABC751E65427B00D67CCA /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13ABC741E65427B00D67CCA /* UserProfileViewController.swift */; };
 		E13ABC771E6542F100D67CCA /* UserProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13ABC761E6542F100D67CCA /* UserProfileViewModel.swift */; };
 		E1728EDF1E65883900804A01 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1728EDE1E65883900804A01 /* Cell.swift */; };
+		E1728EE31E658FBB00804A01 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13ABC6F1E65278B00D67CCA /* Observable.swift */; };
+		E1728EE41E658FBB00804A01 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13ABC741E65427B00D67CCA /* UserProfileViewController.swift */; };
+		E1728EE51E658FBB00804A01 /* UserProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13ABC761E6542F100D67CCA /* UserProfileViewModel.swift */; };
+		E1728EE61E658FBB00804A01 /* NetEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13ABC6E1E65278B00D67CCA /* NetEngine.swift */; };
+		E1728EE71E658FBB00804A01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13ABC571E65264600D67CCA /* AppDelegate.swift */; };
+		E1728EE81E658FBB00804A01 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1728EDE1E65883900804A01 /* Cell.swift */; };
+		E1728EEA1E658FBB00804A01 /* Pods_RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B413D034DD8BC6A02BEFC887 /* Pods_RxTest.framework */; };
+		E1728EEC1E658FBB00804A01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E13ABC601E65264600D67CCA /* LaunchScreen.storyboard */; };
+		E1728EED1E658FBB00804A01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E13ABC5E1E65264600D67CCA /* Assets.xcassets */; };
+		E1728EEE1E658FBB00804A01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E13ABC5B1E65264600D67CCA /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +43,8 @@
 		E13ABC741E65427B00D67CCA /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		E13ABC761E6542F100D67CCA /* UserProfileViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewModel.swift; sourceTree = "<group>"; };
 		E1728EDE1E65883900804A01 /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		E1728EF41E658FBB00804A01 /* RxTest copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RxTest copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1728EF51E658FBB00804A01 /* RxTest copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "RxTest copy-Info.plist"; path = "/Users/xiaoP/Swift3Demo/RxTest/RxTest copy-Info.plist"; sourceTree = "<absolute>"; };
 		EDDC1C824EFC98A9152754B4 /* Pods-RxTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxTest/Pods-RxTest.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -42,6 +54,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				87B2BA6C554D37731AE0D43C /* Pods_RxTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1728EE91E658FBB00804A01 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1728EEA1E658FBB00804A01 /* Pods_RxTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +92,7 @@
 				E13ABC551E65264600D67CCA /* Products */,
 				A53AA2512CEAE6911927A20C /* Pods */,
 				07138FDC09162C68AAF40B6D /* Frameworks */,
+				E1728EF51E658FBB00804A01 /* RxTest copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				E13ABC541E65264600D67CCA /* RxTest.app */,
+				E1728EF41E658FBB00804A01 /* RxTest copy.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -147,6 +169,26 @@
 			productReference = E13ABC541E65264600D67CCA /* RxTest.app */;
 			productType = "com.apple.product-type.application";
 		};
+		E1728EE01E658FBB00804A01 /* RxTest copy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E1728EF11E658FBB00804A01 /* Build configuration list for PBXNativeTarget "RxTest copy" */;
+			buildPhases = (
+				E1728EE11E658FBB00804A01 /* [CP] Check Pods Manifest.lock */,
+				E1728EE21E658FBB00804A01 /* Sources */,
+				E1728EE91E658FBB00804A01 /* Frameworks */,
+				E1728EEB1E658FBB00804A01 /* Resources */,
+				E1728EEF1E658FBB00804A01 /* [CP] Embed Pods Frameworks */,
+				E1728EF01E658FBB00804A01 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "RxTest copy";
+			productName = RxTest;
+			productReference = E1728EF41E658FBB00804A01 /* RxTest copy.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -161,6 +203,9 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 67GS2ZN438;
 						ProvisioningStyle = Automatic;
+					};
+					E1728EE01E658FBB00804A01 = {
+						DevelopmentTeam = 67GS2ZN438;
 					};
 				};
 			};
@@ -178,6 +223,7 @@
 			projectRoot = "";
 			targets = (
 				E13ABC531E65264600D67CCA /* RxTest */,
+				E1728EE01E658FBB00804A01 /* RxTest copy */,
 			);
 		};
 /* End PBXProject section */
@@ -190,6 +236,16 @@
 				E13ABC621E65264600D67CCA /* LaunchScreen.storyboard in Resources */,
 				E13ABC5F1E65264600D67CCA /* Assets.xcassets in Resources */,
 				E13ABC5D1E65264600D67CCA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1728EEB1E658FBB00804A01 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1728EEC1E658FBB00804A01 /* LaunchScreen.storyboard in Resources */,
+				E1728EED1E658FBB00804A01 /* Assets.xcassets in Resources */,
+				E1728EEE1E658FBB00804A01 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,6 +297,51 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		E1728EE11E658FBB00804A01 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E1728EEF1E658FBB00804A01 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxTest/Pods-RxTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E1728EF01E658FBB00804A01 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxTest/Pods-RxTest-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -254,6 +355,19 @@
 				E13ABC701E65278B00D67CCA /* NetEngine.swift in Sources */,
 				E13ABC581E65264600D67CCA /* AppDelegate.swift in Sources */,
 				E1728EDF1E65883900804A01 /* Cell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1728EE21E658FBB00804A01 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1728EE31E658FBB00804A01 /* Observable.swift in Sources */,
+				E1728EE41E658FBB00804A01 /* UserProfileViewController.swift in Sources */,
+				E1728EE51E658FBB00804A01 /* UserProfileViewModel.swift in Sources */,
+				E1728EE61E658FBB00804A01 /* NetEngine.swift in Sources */,
+				E1728EE71E658FBB00804A01 /* AppDelegate.swift in Sources */,
+				E1728EE81E658FBB00804A01 /* Cell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,6 +512,34 @@
 			};
 			name = Release;
 		};
+		E1728EF21E658FBB00804A01 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10CF9088DDD6FAFE4D9ABC88 /* Pods-RxTest.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 67GS2ZN438;
+				INFOPLIST_FILE = "RxTest copy-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chicv.RxTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		E1728EF31E658FBB00804A01 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EDDC1C824EFC98A9152754B4 /* Pods-RxTest.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 67GS2ZN438;
+				INFOPLIST_FILE = "RxTest copy-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chicv.RxTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -415,6 +557,15 @@
 			buildConfigurations = (
 				E13ABC671E65264600D67CCA /* Debug */,
 				E13ABC681E65264600D67CCA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E1728EF11E658FBB00804A01 /* Build configuration list for PBXNativeTarget "RxTest copy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1728EF21E658FBB00804A01 /* Debug */,
+				E1728EF31E658FBB00804A01 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
