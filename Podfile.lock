@@ -6,6 +6,9 @@ PODS:
   - RxDataSources (1.0.3):
     - RxCocoa (~> 3.0)
     - RxSwift (~> 3.0)
+  - RxOptional (3.1.3):
+    - RxCocoa
+    - RxSwift
   - RxSwift (3.2.0)
 
 DEPENDENCIES:
@@ -13,6 +16,7 @@ DEPENDENCIES:
   - ObjectMapper
   - RxCocoa
   - RxDataSources
+  - RxOptional
   - RxSwift
 
 SPEC CHECKSUMS:
@@ -20,8 +24,9 @@ SPEC CHECKSUMS:
   ObjectMapper: 81d0e5d7c57129e3e93f29a04bdf9669542b37d2
   RxCocoa: ccdf43101a70407097a29082f648ba1676075b30
   RxDataSources: a021a0e944ba5f7991259829d973afdbfa719c0b
+  RxOptional: b97b59183af80d1e729ac9e51d09a10be668d6a8
   RxSwift: 46574f70d416b7923c237195939cc488a7fbf3a0
 
-PODFILE CHECKSUM: 4835aa8fd4c505708e499efaaa72726c9f299a81
+PODFILE CHECKSUM: 4c40969ffb1b7e8dad217282f4464c1ef18facf1
 
 COCOAPODS: 1.1.1

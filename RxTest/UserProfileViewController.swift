@@ -10,6 +10,7 @@ import UIKit
 import RxSwift
 import RxDataSources
 import CoreBluetooth
+import RxOptional
 
 
 private let refreshSignal = PublishSubject<Void>()
@@ -51,6 +52,20 @@ class UserProfileViewController: UIViewController {
             }
             .bindNext(tableView.deselectRow)
             .addDisposableTo(bag)
+        
+        peripherals
+            .asObservable()
+            .map({ (cbs: Set<CBPeripheral>) -> CBPeripheral? in
+                return cbs.filter({ (cb: CBPeripheral) -> Bool in
+                    return cb.name == "SimpleBLEPeripheral"
+                }).first
+            })
+            .filterNil()
+            .map { (cb: CBPeripheral) -> (CBPeripheral, [String: Any]?) in
+                return (cb, nil)
+            }
+            .bindNext(manager.connect)
+            .addDisposableTo(bag)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -89,7 +104,6 @@ extension UserProfileViewController: CBCentralManagerDelegate {
     
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         peripherals.value.insert(peripheral)
-        central.connect(peripheral, options: nil)
     }
     
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
