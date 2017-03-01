@@ -144,6 +144,10 @@ class UserProfileViewController: UIViewController {
         
     }
     
+    deinit {
+        print("deinit invoke!")
+    }
+    
 }
 
 extension UserProfileViewController: UITableViewDelegate {
@@ -166,6 +170,13 @@ extension UserProfileViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return .leastNonzeroMagnitude
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if cell.responds(to: #selector(getter: UITableViewCell.separatorInset)) {
+            cell.separatorInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
+        }
+        
     }
     
 }
