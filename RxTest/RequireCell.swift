@@ -35,7 +35,7 @@ class RequireCell: BaseTableViewCell {
             .foregroundColor(.black)
         let attString = NSMutableAttributedString(string: string, attributes: att)
         let grayAtt = TextAttributes()
-            .foregroundColor(.gray)
+            .foregroundColor(.lightGray)
 
         let range = (string as NSString).range(of: "回报方式")
         attString.addAttributes(grayAtt, range: range)

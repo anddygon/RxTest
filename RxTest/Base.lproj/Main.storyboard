@@ -160,8 +160,28 @@
                                             <outlet property="title" destination="z1f-ia-cy2" id="obz-lp-df3"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="RequireHeaderCell" rowHeight="44" id="5Hh-gd-ueV" customClass="RequireHeaderCell" customModule="RxTest" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="188" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5Hh-gd-ueV" id="XTe-5N-fZU">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="需求" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LkC-SB-Me5">
+                                                    <rect key="frame" x="10" y="15" width="25" height="14.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="LkC-SB-Me5" firstAttribute="leading" secondItem="XTe-5N-fZU" secondAttribute="leading" constant="10" id="YIx-Lu-zXK"/>
+                                                <constraint firstItem="LkC-SB-Me5" firstAttribute="centerY" secondItem="XTe-5N-fZU" secondAttribute="centerY" id="pNl-nB-by7"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RequireCell" rowHeight="74" id="fI0-J0-6sR" customClass="RequireCell" customModule="RxTest" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="188" width="320" height="74"/>
+                                        <rect key="frame" x="0.0" y="232" width="320" height="74"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fI0-J0-6sR" id="eGp-fM-Cjx">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="73"/>
@@ -271,7 +291,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="checkCard" destination="wKe-0b-Hqi" id="Dbd-GW-93S"/>
+                        <outlet property="favorite" destination="qsg-e2-ZdT" id="LeL-yi-6K4"/>
+                        <outlet property="share" destination="FzU-Ey-dUA" id="4vv-do-SU7"/>
                         <outlet property="tableView" destination="LcV-Bs-9Co" id="3sK-Xh-0fN"/>
+                        <outlet property="toolBar" destination="lqt-yR-260" id="ddR-XF-jhX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kBg-Ln-8tC" userLabel="First Responder" sceneMemberID="firstResponder"/>

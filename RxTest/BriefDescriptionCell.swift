@@ -33,7 +33,7 @@ class BriefDescriptionCell: BaseTableViewCell {
             .foregroundColor(.black)
         let attString = NSMutableAttributedString(string: string, attributes: att)
         let grayAtt = TextAttributes()
-            .foregroundColor(.gray)
+            .foregroundColor(.lightGray)
         let titles = ["人脉", "收藏", "查看"]
         for title in titles {
             let range = (string as NSString).range(of: title)

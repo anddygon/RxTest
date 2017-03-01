@@ -36,11 +36,10 @@ class UserProfileViewModel {
     }
     
     func userToCells(user: User) -> [SectionModel<String, CellType>] {
-        var sections: [SectionModel<String, CellType>] = []
         //简介
-        let briefSection = SectionModel(model: "", items: [
-            CellType.briefDescription(info: user.visitedInfo)
-            ])
+        var briefItems: [CellType] = []
+        briefItems.append(.briefDescription(info: user.visitedInfo))
+
         //背景
             //行业
         var backgroundItems: [CellType] = []
@@ -74,17 +73,26 @@ class UserProfileViewModel {
             backgroundItems.append(.background(title: title, content: content))
         }
         
-        let backgroundSection = SectionModel(model: "", items: backgroundItems)
         //需求
-        let requireSection = SectionModel(model: "", items: user.requires.map({ (r: Require) -> CellType in
-            return .require(require: r)
-        }))
+        var requireItems: [CellType] = []
+        if !user.requires.isEmpty {
+            requireItems.append(.requireHeader)
+            let requires = user.requires.map({ (r: Require) -> CellType in
+                return .require(require: r)
+            })
+            requireItems.append(contentsOf: requires)
+        }
         
-        sections.append(briefSection)
-        sections.append(backgroundSection)
-        sections.append(requireSection)
+        let totalItems: [[CellType]] = [briefItems, backgroundItems, requireItems]
+        let validSections = totalItems
+            .filter { (items: [UserProfileViewModel.CellType]) -> Bool in
+                return !items.isEmpty
+            }
+            .map { (items: [UserProfileViewModel.CellType]) -> SectionModel<String, CellType> in
+                return SectionModel(model: "", items: items)
+            }
         
-        return sections
+        return validSections
     }
     
 }
