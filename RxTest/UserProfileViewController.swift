@@ -60,13 +60,10 @@ extension UserProfileViewController: CBCentralManagerDelegate {
     }
     
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
-        if let index = peripherals.index(of: peripheral) {
-            peripherals.remove(at: index)
-            peripherals.insert(peripheral, at: index)
-        } else {
+        if !peripherals.contains(peripheral) {
             peripherals.append(peripheral)
+            tableView.reloadData()
         }
-        tableView.reloadData()
     }
     
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
@@ -82,7 +79,6 @@ extension UserProfileViewController: CBCentralManagerDelegate {
         tableView.reloadData()
         print("didFailToConnect \(error)")
     }
-    
     
 }
 
