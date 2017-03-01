@@ -21,7 +21,7 @@ class RequireCell: BaseTableViewCell {
     func fillData(require r: Require) {
         icon.image = UIImage(named: "requires_\(r.type)")
         title.text = r.title
-        require.text = r.desciption
+        require.text = r.desc
         reward.attributedText = buildAttributedString(string: "回报方式 \(r.repay.joined(separator: ","))")
         if let intervals = r.create_time.double {
             time.text = buildTime(intervals: intervals)

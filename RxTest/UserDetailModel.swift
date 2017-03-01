@@ -103,7 +103,7 @@ class Require: Mappable {
     
     var id = ""
     var type = ""
-    var desciption = ""
+    var desc = ""
     var repay = [String]()
     var create_time = ""
     var title = ""
@@ -116,7 +116,7 @@ class Require: Mappable {
     func mapping(map: Map) {
         id <- map["id"]
         type <- map["type"]
-        desciption <- map["desciption"]
+        desc <- map["description"]
         repay <- map["repay"]
         create_time  <- map["create_time"]
         hash <- map["hash"]

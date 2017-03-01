@@ -226,6 +226,7 @@
                                                 <constraint firstItem="SvA-El-aVQ" firstAttribute="top" secondItem="ss7-b7-Dry" secondAttribute="bottom" constant="4" id="Vny-fM-msT"/>
                                                 <constraint firstItem="SKN-fs-u8Z" firstAttribute="leading" secondItem="SvA-El-aVQ" secondAttribute="leading" id="eI2-Wl-qYp"/>
                                                 <constraint firstItem="6er-bI-keJ" firstAttribute="centerY" secondItem="eGp-fM-Cjx" secondAttribute="centerY" id="kgx-r7-YbQ"/>
+                                                <constraint firstItem="dbs-pZ-HPX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="SvA-El-aVQ" secondAttribute="trailing" constant="8" id="scl-p0-S3d"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
