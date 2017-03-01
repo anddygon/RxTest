@@ -14,5 +14,10 @@ class BackgroundCell: BaseTableViewCell {
     @IBOutlet weak var content: UILabel!
     
     
+    func fillData(title: String, content: String) {
+        self.title.text = title
+        self.content.text = content
+    }
+    
 }
 

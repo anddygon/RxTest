@@ -8,18 +8,17 @@
 
 import UIKit
 import RxSwift
-import RxDataSources
 
 class UserProfileViewController: UIViewController {
     
     enum CellType {
-        case briefDescription
-        case background
-        case require
+        case briefDescription(info: VisitedInfo)
+        case background(title: String, content: String)
+        case require(require: Require)
     }
     
     @IBOutlet weak var tableView: UITableView!
-    let dataSources = RxTableViewSectionedReloadDataSource<SectionModel<String, CellType>>()
+    let viewModel = UserProfileViewModel()
     let bag = DisposeBag()
     
 
@@ -32,39 +31,28 @@ class UserProfileViewController: UIViewController {
     func config() {
         tableView.delegate = self
         title = "人脉"
-        dataSources.configureCell = { ds, tv, ip, type in
+        viewModel.dataSources.configureCell = { ds, tv, ip, type in
             switch type {
-            case .briefDescription:
+            case .briefDescription(let info):
                 let cell = tv.dequeueReusableCell(withIdentifier: "BriefDescriptionCell") as! BriefDescriptionCell
+                cell.fillData(info: info)
                 return cell
-            case .background:
+            case .background(let title, let content):
                 let cell = tv.dequeueReusableCell(withIdentifier: "BackgroundCell") as! BackgroundCell
+                cell.fillData(title: title, content: content)
                 return cell
-            case .require:
+            case .require(let r):
                 let cell = tv.dequeueReusableCell(withIdentifier: "RequireCell") as! RequireCell
+                cell.fillData(require: r)
                 return cell
             }
         }
     }
     
     func bind() {
-        let sectionModels: [SectionModel<String, CellType>] = [
-            SectionModel(model: "", items: [CellType.briefDescription]),
-            SectionModel(model: "", items: [
-                CellType.background,
-                CellType.background,
-                CellType.background,
-                CellType.background,
-                ]),
-            SectionModel(model: "", items: [
-                CellType.require,
-                CellType.require,
-                CellType.require,
-                ])
-        ]
-        
-        Observable.just(sectionModels)
-            .bindTo(tableView.rx.items(dataSource: dataSources))
+        viewModel.cells
+            .asObservable()
+            .bindTo(tableView.rx.items(dataSource: viewModel.dataSources))
             .addDisposableTo(bag)
         
         tableView.rx.itemSelected
@@ -81,7 +69,7 @@ class UserProfileViewController: UIViewController {
 extension UserProfileViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let cellType = dataSources[indexPath]
+        let cellType = viewModel.dataSources[indexPath]
         switch cellType {
         case .briefDescription:
             return 88

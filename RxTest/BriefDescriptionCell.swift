@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import TextAttributes
 
 class BriefDescriptionCell: BaseTableViewCell {
     
@@ -17,6 +18,32 @@ class BriefDescriptionCell: BaseTableViewCell {
     @IBOutlet weak var favorited: UILabel!
     @IBOutlet weak var viewed: UILabel!
     
+    
+    func fillData(info: VisitedInfo)  {
+        avatar.image = UIImage(named: info.avatar)
+        name.text = info.name + " · " + info.title
+        platform.text = info.company
+        connections.attributedText = buildAttributedString(string: "人脉 \(info.connection_num)")
+        favorited.attributedText = buildAttributedString(string: "收藏 \(info.favored_num)")
+        viewed.attributedText = buildAttributedString(string: "查看 \(info.viewed_num)")
+    }
+    
+    func buildAttributedString(string: String) -> NSAttributedString {
+        let att = TextAttributes()
+            .foregroundColor(.black)
+        let attString = NSMutableAttributedString(string: string, attributes: att)
+        let grayAtt = TextAttributes()
+            .foregroundColor(.gray)
+        let titles = ["人脉", "收藏", "查看"]
+        for title in titles {
+            let range = (string as NSString).range(of: title)
+            if range.location != NSNotFound {
+                attString.addAttributes(grayAtt, range: range)
+                break
+            }
+        }
+        return attString
+    }
     
 }
 
