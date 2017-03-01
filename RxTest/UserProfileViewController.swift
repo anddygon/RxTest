@@ -45,6 +45,7 @@ extension UserProfileViewController: CBCentralManagerDelegate {
         case .poweredOn:
             print("poweredOn")
             central.scanForPeripherals(withServices: nil, options: nil)
+            
         case .resetting:
             print("resetting")
             
