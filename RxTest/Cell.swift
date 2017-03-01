@@ -11,11 +11,13 @@ import CoreBluetooth
 
 class Cell: UITableViewCell {
     
+    @IBOutlet weak var rssi: UILabel!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var state: UILabel!
     
     func fillData(cb: CBPeripheral) {
-        name.text = cb.name
+        name.text = cb.name ?? "没有名字"
+        rssi.text = cb.identifier.description
         state.text = cb.state.description
     }
     

@@ -14,10 +14,7 @@ class UserProfileViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     private(set) var manager: CBCentralManager!
-    fileprivate(set) var _peripherals = Set<CBPeripheral>()
-    var peripherals: [CBPeripheral] {
-        return Array(_peripherals)
-    }
+    fileprivate(set) var peripherals: [CBPeripheral] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,44 +23,11 @@ class UserProfileViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
-//
-//        peripherals.asObservable()
-//            .map { (cbs: Set<CBPeripheral>) -> [SectionModel<String, CBPeripheral>] in
-//                let arr = Array(cbs).sorted(by: { (cb1: CBPeripheral, cb2: CBPeripheral) -> Bool in
-//                    switch (cb1.state, cb2.state) {
-//                    case (.connecting, _):
-//                        return true
-//                    case (_, .connecting):
-//                        return false
-//                    default:
-//                        return true
-//                    }
-//                })
-//                return [
-//                    SectionModel(model: "", items: arr)
-//                ]
-//            }
-//            .bindTo(tableView.rx.items(dataSource: dataSource))
-//            .addDisposableTo(bag)
-//        
-//        tableView.rx.itemSelected
-//            .asObservable()
-//            .map { (ip: IndexPath) -> (IndexPath, Bool) in
-//                return (ip, true)
-//            }
-//            .bindNext(tableView.deselectRow)
-//            .addDisposableTo(bag)
-//        
-//        tableView.rx.modelSelected(CBPeripheral.self)
-//            .bindNext { [unowned self] (cb: CBPeripheral) in
-//                self.manager.connect(cb, options: nil)
-//            }
-//            .addDisposableTo(bag)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
+        //断开连接
         peripherals.forEach { (cb: CBPeripheral) in
             manager.cancelPeripheralConnection(cb)
         }
@@ -96,20 +60,26 @@ extension UserProfileViewController: CBCentralManagerDelegate {
     }
     
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
-        _peripherals.insert(peripheral)
+        if let index = peripherals.index(of: peripheral) {
+            peripherals.remove(at: index)
+            peripherals.insert(peripheral, at: index)
+        } else {
+            peripherals.append(peripheral)
+        }
+        tableView.reloadData()
     }
     
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
-        
+        tableView.reloadData()
     }
     
     func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
-        
+        tableView.reloadData()
         print("didDisconnectPeripheral \(error)")
     }
     
     func centralManager(_ central: CBCentralManager, didFailToConnect peripheral: CBPeripheral, error: Error?) {
-        
+        tableView.reloadData()
         print("didFailToConnect \(error)")
     }
     
@@ -132,8 +102,13 @@ extension UserProfileViewController: UITableViewDataSource {
 
 extension UserProfileViewController: UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 44
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cb = peripherals[indexPath.row]
+        if case .connected = cb.state {//如果已连接 点击断开连接
+            manager.cancelPeripheralConnection(cb)
+        } else {
+            manager.connect(cb, options: nil)//点击链接
+        }
     }
     
 }
