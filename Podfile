@@ -6,10 +6,10 @@ target 'RxTest' do
   use_frameworks!
 
   # Pods for RxTest
-  pod 'Alamofire'
-  pod 'RxSwift'
-  pod 'RxCocoa'
-  pod 'ObjectMapper'
-  pod 'RxDataSources'  
-  pod 'RxOptional'
+#  pod 'Alamofire'
+#  pod 'RxSwift'
+#  pod 'RxCocoa'
+#  pod 'ObjectMapper'
+#  pod 'RxDataSources'  
+#  pod 'RxOptional'
 end

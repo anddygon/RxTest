@@ -8,30 +8,15 @@
 
 import UIKit
 import CoreBluetooth
-import RxSwift
 
 class Cell: UITableViewCell {
     
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var state: UILabel!
-    private(set) var bag = DisposeBag()
     
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        bag = DisposeBag()
-    }
-
-    func fillData(cb: CBPeripheral, refreshSignal: Observable<Void>) {
+    func fillData(cb: CBPeripheral) {
         name.text = cb.name
         state.text = cb.state.description
-        
-        refreshSignal
-            .debug("\(cb.name)")
-            .bindNext { [weak self] in
-                self?.state.text = cb.state.description
-            }
-            .addDisposableTo(bag)
     }
     
 }

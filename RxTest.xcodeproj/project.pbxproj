@@ -13,15 +13,9 @@
 		E13ABC5D1E65264600D67CCA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E13ABC5B1E65264600D67CCA /* Main.storyboard */; };
 		E13ABC5F1E65264600D67CCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E13ABC5E1E65264600D67CCA /* Assets.xcassets */; };
 		E13ABC621E65264600D67CCA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E13ABC601E65264600D67CCA /* LaunchScreen.storyboard */; };
-		E13ABC701E65278B00D67CCA /* NetEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13ABC6E1E65278B00D67CCA /* NetEngine.swift */; };
-		E13ABC711E65278B00D67CCA /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13ABC6F1E65278B00D67CCA /* Observable.swift */; };
 		E13ABC751E65427B00D67CCA /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13ABC741E65427B00D67CCA /* UserProfileViewController.swift */; };
-		E13ABC771E6542F100D67CCA /* UserProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13ABC761E6542F100D67CCA /* UserProfileViewModel.swift */; };
 		E1728EDF1E65883900804A01 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1728EDE1E65883900804A01 /* Cell.swift */; };
-		E1728EE31E658FBB00804A01 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13ABC6F1E65278B00D67CCA /* Observable.swift */; };
 		E1728EE41E658FBB00804A01 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13ABC741E65427B00D67CCA /* UserProfileViewController.swift */; };
-		E1728EE51E658FBB00804A01 /* UserProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13ABC761E6542F100D67CCA /* UserProfileViewModel.swift */; };
-		E1728EE61E658FBB00804A01 /* NetEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13ABC6E1E65278B00D67CCA /* NetEngine.swift */; };
 		E1728EE71E658FBB00804A01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13ABC571E65264600D67CCA /* AppDelegate.swift */; };
 		E1728EE81E658FBB00804A01 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1728EDE1E65883900804A01 /* Cell.swift */; };
 		E1728EEC1E658FBB00804A01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E13ABC601E65264600D67CCA /* LaunchScreen.storyboard */; };
@@ -39,10 +33,7 @@
 		E13ABC5E1E65264600D67CCA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E13ABC611E65264600D67CCA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E13ABC631E65264600D67CCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E13ABC6E1E65278B00D67CCA /* NetEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetEngine.swift; path = NetEngine/NetEngine.swift; sourceTree = "<group>"; };
-		E13ABC6F1E65278B00D67CCA /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Observable.swift; path = NetEngine/Observable.swift; sourceTree = "<group>"; };
 		E13ABC741E65427B00D67CCA /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
-		E13ABC761E6542F100D67CCA /* UserProfileViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewModel.swift; sourceTree = "<group>"; };
 		E1728EDE1E65883900804A01 /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		E1728EF41E658FBB00804A01 /* RxTest copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RxTest copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1728EF51E658FBB00804A01 /* RxTest copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "RxTest copy-Info.plist"; path = "/Users/xiaoP/Swift3Demo/RxTest/RxTest copy-Info.plist"; sourceTree = "<absolute>"; };
@@ -108,27 +99,16 @@
 		E13ABC561E65264600D67CCA /* RxTest */ = {
 			isa = PBXGroup;
 			children = (
-				E13ABC691E65273300D67CCA /* NetEngine */,
 				E13ABC721E65423700D67CCA /* UserPofile */,
 				E13ABC731E65424C00D67CCA /* Support */,
 			);
 			path = RxTest;
 			sourceTree = "<group>";
 		};
-		E13ABC691E65273300D67CCA /* NetEngine */ = {
-			isa = PBXGroup;
-			children = (
-				E13ABC6E1E65278B00D67CCA /* NetEngine.swift */,
-				E13ABC6F1E65278B00D67CCA /* Observable.swift */,
-			);
-			name = NetEngine;
-			sourceTree = "<group>";
-		};
 		E13ABC721E65423700D67CCA /* UserPofile */ = {
 			isa = PBXGroup;
 			children = (
 				E13ABC741E65427B00D67CCA /* UserProfileViewController.swift */,
-				E13ABC761E6542F100D67CCA /* UserProfileViewModel.swift */,
 				E1728EDE1E65883900804A01 /* Cell.swift */,
 			);
 			name = UserPofile;
@@ -301,10 +281,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E13ABC711E65278B00D67CCA /* Observable.swift in Sources */,
 				E13ABC751E65427B00D67CCA /* UserProfileViewController.swift in Sources */,
-				E13ABC771E6542F100D67CCA /* UserProfileViewModel.swift in Sources */,
-				E13ABC701E65278B00D67CCA /* NetEngine.swift in Sources */,
 				E13ABC581E65264600D67CCA /* AppDelegate.swift in Sources */,
 				E1728EDF1E65883900804A01 /* Cell.swift in Sources */,
 			);
@@ -314,10 +291,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1728EE31E658FBB00804A01 /* Observable.swift in Sources */,
 				E1728EE41E658FBB00804A01 /* UserProfileViewController.swift in Sources */,
-				E1728EE51E658FBB00804A01 /* UserProfileViewModel.swift in Sources */,
-				E1728EE61E658FBB00804A01 /* NetEngine.swift in Sources */,
 				E1728EE71E658FBB00804A01 /* AppDelegate.swift in Sources */,
 				E1728EE81E658FBB00804A01 /* Cell.swift in Sources */,
 			);

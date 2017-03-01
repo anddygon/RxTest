@@ -7,21 +7,17 @@
 //
 
 import UIKit
-import RxSwift
-import RxDataSources
 import CoreBluetooth
-import RxOptional
 
 
-private let refreshSignal = PublishSubject<Void>()
 class UserProfileViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     private(set) var manager: CBCentralManager!
-    let peripherals = Variable<Set<CBPeripheral>>([])
-    let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, CBPeripheral>>()
-    let bag = DisposeBag()
-    
+    fileprivate(set) var _peripherals = Set<CBPeripheral>()
+    var peripherals: [CBPeripheral] {
+        return Array(_peripherals)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,49 +25,46 @@ class UserProfileViewController: UIViewController {
         manager = CBCentralManager(delegate: self, queue: nil)
         
         tableView.delegate = self
-        
-        dataSource.configureCell = { ds, tv, ip, cb in
-            let cell = tv.dequeueReusableCell(withIdentifier: "Cell") as! Cell
-            cell.fillData(cb: cb, refreshSignal: refreshSignal)
-            return cell
-        }
-        
-        peripherals.asObservable()
-            .map { (cbs: Set<CBPeripheral>) -> [SectionModel<String, CBPeripheral>] in
-                return [
-                    SectionModel(model: "", items: Array(cbs))
-                ]
-            }
-            .bindTo(tableView.rx.items(dataSource: dataSource))
-            .addDisposableTo(bag)
-        
-        tableView.rx.itemSelected
-            .asObservable()
-            .map { (ip: IndexPath) -> (IndexPath, Bool) in
-                return (ip, true)
-            }
-            .bindNext(tableView.deselectRow)
-            .addDisposableTo(bag)
-        
-        peripherals
-            .asObservable()
-            .map({ (cbs: Set<CBPeripheral>) -> CBPeripheral? in
-                return cbs.filter({ (cb: CBPeripheral) -> Bool in
-                    return cb.name == "SimpleBLEPeripheral"
-                }).first
-            })
-            .filterNil()
-            .map { (cb: CBPeripheral) -> (CBPeripheral, [String: Any]?) in
-                return (cb, nil)
-            }
-            .bindNext(manager.connect)
-            .addDisposableTo(bag)
+        tableView.dataSource = self
+//
+//        peripherals.asObservable()
+//            .map { (cbs: Set<CBPeripheral>) -> [SectionModel<String, CBPeripheral>] in
+//                let arr = Array(cbs).sorted(by: { (cb1: CBPeripheral, cb2: CBPeripheral) -> Bool in
+//                    switch (cb1.state, cb2.state) {
+//                    case (.connecting, _):
+//                        return true
+//                    case (_, .connecting):
+//                        return false
+//                    default:
+//                        return true
+//                    }
+//                })
+//                return [
+//                    SectionModel(model: "", items: arr)
+//                ]
+//            }
+//            .bindTo(tableView.rx.items(dataSource: dataSource))
+//            .addDisposableTo(bag)
+//        
+//        tableView.rx.itemSelected
+//            .asObservable()
+//            .map { (ip: IndexPath) -> (IndexPath, Bool) in
+//                return (ip, true)
+//            }
+//            .bindNext(tableView.deselectRow)
+//            .addDisposableTo(bag)
+//        
+//        tableView.rx.modelSelected(CBPeripheral.self)
+//            .bindNext { [unowned self] (cb: CBPeripheral) in
+//                self.manager.connect(cb, options: nil)
+//            }
+//            .addDisposableTo(bag)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        peripherals.value.forEach { (cb: CBPeripheral) in
+        peripherals.forEach { (cb: CBPeripheral) in
             manager.cancelPeripheralConnection(cb)
         }
     }
@@ -103,21 +96,37 @@ extension UserProfileViewController: CBCentralManagerDelegate {
     }
     
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
-        peripherals.value.insert(peripheral)
+        _peripherals.insert(peripheral)
     }
     
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
-        refreshSignal.onNext()
+        
     }
     
     func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
-        refreshSignal.onNext()
+        
+        print("didDisconnectPeripheral \(error)")
     }
     
     func centralManager(_ central: CBCentralManager, didFailToConnect peripheral: CBPeripheral, error: Error?) {
-        refreshSignal.onNext()
+        
+        print("didFailToConnect \(error)")
     }
     
+    
+}
+
+extension UserProfileViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return peripherals.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! Cell
+        cell.fillData(cb: peripherals[indexPath.row])
+        return cell
+    }
     
 }
 
