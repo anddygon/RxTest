@@ -16,21 +16,10 @@ class Cell: UITableViewCell {
     @IBOutlet weak var state: UILabel!
     private(set) var bag = DisposeBag()
     
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-    }
     
     override func prepareForReuse() {
         super.prepareForReuse()
         bag = DisposeBag()
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
     func fillData(cb: CBPeripheral, refreshSignal: Observable<Void>) {
@@ -43,10 +32,6 @@ class Cell: UITableViewCell {
                 self?.state.text = cb.state.description
             }
             .addDisposableTo(bag)
-    }
-    
-    deinit {
-        print(self, #function)
     }
     
 }
