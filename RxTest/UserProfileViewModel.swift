@@ -77,9 +77,10 @@ class UserProfileViewModel {
         var requireItems: [CellType] = []
         if !user.requires.isEmpty {
             requireItems.append(.requireHeader)
-            let requires = user.requires.map({ (r: Require) -> CellType in
-                return .require(require: r)
-            })
+            let requires = user.requires
+                .map({ (r: Require) -> CellType in
+                    return .require(require: r)
+                })
             requireItems.append(contentsOf: requires)
         }
         
