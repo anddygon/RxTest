@@ -15,6 +15,7 @@ class UserProfileViewModel {
     typealias CellType = UserProfileViewController.CellType
     
     let bag = DisposeBag()
+    let user = Variable<User>(User())
     let cells = Variable<[SectionModel<String, CellType>]>([])
     let dataSources = RxTableViewSectionedReloadDataSource<SectionModel<String, CellType>>()
     
@@ -26,12 +27,19 @@ class UserProfileViewModel {
             .catchError { (error: Error) -> Observable<(AnyObject?, HTTPURLResponse?)> in
                 return Observable.empty()
             }
+            .do(onNext: { (_) in
+                print("请求执行了")
+            })
             .mapObject(User.self)
-            .shareReplay(1)
+//            .shareReplay(1)
         
         user
             .map(userToCells)
             .bindTo(cells)
+            .addDisposableTo(bag)
+        
+        user
+            .bindTo(self.user)
             .addDisposableTo(bag)
     }
     
@@ -94,6 +102,19 @@ class UserProfileViewModel {
             }
         
         return validSections
+    }
+    
+    func test() {
+        let seq = ReplaySubject<Int>.create(bufferSize: 1)
+        
+        seq.onNext(1)
+        
+        seq
+            .asObservable()
+            .bindNext { (i: Int) in
+                print("i \(i)")
+            }
+            .addDisposableTo(bag)
     }
     
 }
