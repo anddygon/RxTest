@@ -13,6 +13,7 @@ class BriefDescriptionCell: BaseTableViewCell {
     
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var identity: UILabel!
     @IBOutlet weak var platform: UILabel!
     @IBOutlet weak var connections: UILabel!
     @IBOutlet weak var favorited: UILabel!
@@ -20,8 +21,10 @@ class BriefDescriptionCell: BaseTableViewCell {
     
     
     func fillData(info: VisitedInfo)  {
+        
         avatar.image = UIImage(named: info.avatar)
         name.text = info.name + " · " + info.title
+        identity.isHidden = info.is_identity != "1"
         platform.text = info.company
         connections.attributedText = buildAttributedString(string: "人脉 \(info.connection_num)")
         favorited.attributedText = buildAttributedString(string: "收藏 \(info.favored_num)")

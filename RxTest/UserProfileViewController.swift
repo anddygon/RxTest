@@ -141,11 +141,49 @@ class UserProfileViewController: UIViewController {
             }
             .addDisposableTo(bag)
         
+        viewModel.user
+            .asObservable()
+            .map { (user: User) -> Bool in
+                return user.visitedInfo.is_favor == "1"
+            }
+            .bindNext { [weak self] (isFavor: Bool) in
+                let title: String
+                let titleColor: UIColor
+                if isFavor {
+                    title = "已收藏"
+                    titleColor = .red
+                } else {
+                    title = "收藏"
+                    titleColor = .darkGray
+                }
+                self?.favorite.setTitle(title, for: .normal)
+                self?.favorite.setTitleColor(titleColor, for: .normal)
+            }
+            .addDisposableTo(bag)
         
-    }
-    
-    deinit {
-        print("deinit invoke!")
+        viewModel.user
+            .asObservable()
+            .map { (user: User) -> String in
+                return user.card_display
+            }
+            .bindNext { [weak self] (display: String) in
+                let checkEnable = display != "1"
+                self?.checkCard.isEnabled = checkEnable
+                let checkTitle: String
+                switch display {
+                case "2":
+                    checkTitle = "交换名片"
+                case "3":
+                    checkTitle = "同意交换"
+                case "4":
+                    checkTitle = "查看名片"
+                default:
+                    checkTitle = "查看名片"
+                }
+                self?.checkCard.setTitle(checkTitle, for: .normal)
+            }
+            .addDisposableTo(bag)
+        
     }
     
 }

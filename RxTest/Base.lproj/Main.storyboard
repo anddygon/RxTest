@@ -103,6 +103,12 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 已认证 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hhT-YM-r1f">
+                                                    <rect key="frame" x="175" y="14" width="33.5" height="11"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                                    <color key="textColor" red="0.19709660915452382" green="0.40863423266039467" blue="0.98132258653640747" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="dPE-w2-NWf" firstAttribute="top" secondItem="PUS-aL-rEn" secondAttribute="top" id="5EL-2N-zgX"/>
@@ -113,9 +119,11 @@
                                                 <constraint firstItem="EVX-Tz-JLC" firstAttribute="top" secondItem="kl0-aN-DD3" secondAttribute="top" id="Ob6-oB-Ewz"/>
                                                 <constraint firstItem="kl0-aN-DD3" firstAttribute="top" secondItem="v7D-dh-qec" secondAttribute="bottom" constant="15" id="QnI-h8-yK3"/>
                                                 <constraint firstItem="BNY-ok-RqS" firstAttribute="top" secondItem="kl0-aN-DD3" secondAttribute="top" id="Qzb-Fk-sXH"/>
+                                                <constraint firstItem="hhT-YM-r1f" firstAttribute="centerY" secondItem="dPE-w2-NWf" secondAttribute="centerY" id="a0G-6g-Ph9"/>
                                                 <constraint firstItem="dPE-w2-NWf" firstAttribute="leading" secondItem="PUS-aL-rEn" secondAttribute="trailing" constant="8" id="ewq-qm-pg2"/>
                                                 <constraint firstItem="kl0-aN-DD3" firstAttribute="leading" secondItem="v7D-dh-qec" secondAttribute="leading" id="lLk-CX-rEn"/>
                                                 <constraint firstItem="EVX-Tz-JLC" firstAttribute="leading" secondItem="kl0-aN-DD3" secondAttribute="trailing" constant="60" id="s3V-dS-NUG"/>
+                                                <constraint firstItem="hhT-YM-r1f" firstAttribute="leading" secondItem="dPE-w2-NWf" secondAttribute="trailing" constant="8" id="tns-V9-37T"/>
                                                 <constraint firstItem="PUS-aL-rEn" firstAttribute="leading" secondItem="vCD-yb-O49" secondAttribute="leading" constant="10" id="zsT-aY-WNb"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -123,6 +131,7 @@
                                             <outlet property="avatar" destination="PUS-aL-rEn" id="icZ-rn-WGO"/>
                                             <outlet property="connections" destination="kl0-aN-DD3" id="Ubh-G9-LrF"/>
                                             <outlet property="favorited" destination="EVX-Tz-JLC" id="pTh-zw-bpU"/>
+                                            <outlet property="identity" destination="hhT-YM-r1f" id="MhB-tK-eoh"/>
                                             <outlet property="name" destination="dPE-w2-NWf" id="7xx-JD-Cqa"/>
                                             <outlet property="platform" destination="v7D-dh-qec" id="Yye-F3-Mvc"/>
                                             <outlet property="viewed" destination="BNY-ok-RqS" id="yEL-Hk-iBS"/>

@@ -27,11 +27,8 @@ class UserProfileViewModel {
             .catchError { (error: Error) -> Observable<(AnyObject?, HTTPURLResponse?)> in
                 return Observable.empty()
             }
-            .do(onNext: { (_) in
-                print("请求执行了")
-            })
             .mapObject(User.self)
-//            .shareReplay(1)
+            .shareReplay(1)
         
         user
             .map(userToCells)

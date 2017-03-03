@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import TextAttributes
 
 extension String {
     
@@ -18,6 +19,19 @@ extension String {
     
     var double: Double? {
         return number?.doubleValue
+    }
+    
+}
+
+extension String {
+    
+    func buildAttributedString(normalAttribute: TextAttributes, highLightItems items: [String: TextAttributes]) -> NSAttributedString {
+        let attString = NSMutableAttributedString(string: self, attributes: normalAttribute)
+        for (str, att) in items {
+            let range = (self as NSString).range(of: str)
+            attString.addAttributes(att, range: range)
+        }
+        return attString
     }
     
 }
